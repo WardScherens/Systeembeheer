@@ -3,5 +3,5 @@
 ff02::1		ip6-allnodes
 ff02::2		ip6-allrouters
 # --- BEGIN PVE ---
-193.191.177.203 ward-scherens.uclllabs.be ward-scherens
+193.191.177.203 ward-scherens.sb.uclllabs.be ward-scherens
 # --- END PVE ---
