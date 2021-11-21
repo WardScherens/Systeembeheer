@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.ward-scherens.sb.uclllabs.be. root.ward-scherens.sb.uclllabs.be. (
-			      6		; Serial		
+			      6		;	
 			    300		; Refresh
 			    300		; Retry
 			    300		; Expire
@@ -22,3 +22,4 @@ www				IN A 193.191.177.203
 www1				IN A 193.191.177.203
 www2				IN A 193.191.177.203
 ;
+"$zone"    IN    NS    ns.ward-scherens.sb.uclllabs.be.
