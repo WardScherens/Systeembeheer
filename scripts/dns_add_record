@@ -1,0 +1,66 @@
+#!/bin/bash
+#if ran without permission: 
+
+if [ "$EUID" -ne 0 ]
+  then echo "Run as root or with sudo";
+  exit 1;
+fi
+
+if [ -n "$1" ]; then
+if [[ $1 = "-t" ]]; then
+        case $2 in
+
+	A )
+    	if [[ $1 = "-t" ]]; then
+        	arecord=$3
+        	aip=$4
+        	dom=$5
+    	else
+        	arecord=$1
+        	aip=$2
+        	dom=$3
+    	fi
+    	
+	echo "Creating "'$arecord'"record for ip"'$aip'"with domain "'$dom'
+    	echo -e "$arecord             IN      A       $aip" >> /etc/bind/zones/db."$dom"
+        DB="/etc/bind/zones/db.$dom"
+        ;;
+
+	#Make Cname record
+    	CNAME )
+    	echo "Creating CNAME record"
+    	CNAME=$3
+    	dom=$4
+        DbFile="/etc/bind/zones/db.$dom"
+        echo -e "$CNAME     IN      CNAME   $dom." >> "$DbFile"
+        ;;
+
+        MX )
+    	echo "Creating MX record"
+     	arecord=$3
+     	aip=$4
+    	dom=$5
+        echo -e "@      IN      MX      10      $arecord.$dom." >> /etc/bind/zones/db."$dom"
+        echo -e "$arecord     IN      A       $aip" >> /etc/bind/zones/db."$dom"
+        DbFile="/etc/bind/zones/db.$dom"
+        ;;
+
+        esac
+        else
+        echo -e "$1     IN      A       $2" >> /etc/bind/zones/db."$3"
+        DbFile="/etc/bind/zones/db.$3"
+        fi
+
+    #Edit serialnumber
+        serialline=$(grep "Serial" /etc/bind/db.ward-scherens.sb.uclllabs.be)
+	serialnumber=$(echo $serialline | cut -d ; -f 1)
+	((serialnumber++))
+	newserial="$serialnumber    ; Serial"
+	echo $newserial;
+	sed -i "s/.Serial./\t\t\t     $newserial/g" "$DbFile"
+	
+	echo -e 'Serial updated  & now restarting bind9 service'
+        systemctl restart bind9
+
+else
+        echo -e "Invalid use"
