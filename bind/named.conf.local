@@ -20,7 +20,7 @@ include "/etc/bind/named.conf.mrt-zones";
 
 zone "eline-schepers.sb.uclllabs.be"{
 	type slave;
-	masters {193.191.177.203;};
+	masters {193.191.177.143;};
 	file "/etc/bind/zones/db.eline-schepers.sb.uclllabs.be";
 };
 
@@ -34,3 +34,9 @@ zone "thomas-claes.sb.uclllabs.be"{
         masters {193.191.177.198;};
 	file "/etc/bind/zones/db.thomas-claes.sb.uclllabs.be";
 };
+zone "foobar.ward-scherens.sb.uclllabs.be" {
+    type master;
+    fileName "/etc/bind/zones/db.foobar.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
