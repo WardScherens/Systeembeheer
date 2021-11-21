@@ -9,7 +9,7 @@ serial=`date +%Y%m%d`
 file=/etc/bind/db.'"$zone"'.ward-scherens.sb.uclllabs.be
 if test -f db.'"$zone"'.ward-scherens.sb.uclllabs.be; then
     echo 'Zone '"$zone"' already exists'
-
+fi
 #create zone in named.conf.local
 echo "Adding zone"
 echo -e 'zone "'"$zone"'.ward-scherens.sb.uclllabs.be" {
