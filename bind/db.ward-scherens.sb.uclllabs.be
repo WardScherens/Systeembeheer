@@ -3,13 +3,14 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.ward-scherens.sb.uclllabs.be. root.ward-scherens.sb.uclllabs.be. (
-			      3		; Serial		
+			      6		; Serial		
 			    300		; Refresh
 			    300		; Retry
 			    300		; Expire
 			    300 )	; Negative Cache TTL
 ;
 @	IN	NS	ns.ward-scherens.sb.uclllabs.be.
+@	IN 	NS 	ns.eline-schepers.sb.uclllabs.be.
 @	IN	NS	ns1.uclllabs.be.
 @	IN 	NS 	ns2.uclllabs.be.
 ; 
