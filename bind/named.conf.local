@@ -16,6 +16,8 @@ zone "ward-scherens.sb.uclllabs.be"{
 		193.191.177.143;};
 };
 
+include "/etc/bind/named.conf.mrt-zones";
+
 zone "eline-schepers.sb.uclllabs.be"{
 	type slave;
 	masters {193.191.177.203;};
