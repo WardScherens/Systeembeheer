@@ -19,5 +19,16 @@ zone "ward-scherens.sb.uclllabs.be"{
 zone "eline-schepers.sb.uclllabs.be"{
 	type slave;
 	masters {193.191.177.203;};
+	file "/etc/bind/zones/db.eline-schepers.sb.uclllabs.be";
 };
 
+zone "gerben-piot.sb.uclllabs.be"{
+        type slave;
+        masters {193.191.177.148;};
+	file "/etc/bind/zones/db.gerben-piot.sb.uclllabs.be";
+};
+zone "thomas-claes.sb.uclllabs.be"{
+        type slave;
+        masters {193.191.177.198;};
+	file "/etc/bind/zones/db.thomas-claes.sb.uclllabs.be";
+};
