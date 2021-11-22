@@ -5,9 +5,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 zone=$1
-serial=`date +%Y%m%d`
-file=/etc/bind/db.'"$zone"'.ward-scherens.sb.uclllabs.be
-if test -f db.'"$zone"'.ward-scherens.sb.uclllabs.be; then
+if test -f db."$zone".ward-scherens.sb.uclllabs.be; then
     echo 'Zone '"$zone"' already exists'
 fi
 #create zone in named.conf.local
@@ -23,10 +21,10 @@ echo -e 'zone "'"$zone"'.ward-scherens.sb.uclllabs.be" {
 echo 'Creating :db.'"$zone"'.ward-scherens.sb.uclllabs.be' 
 echo -e '$TTL 604800
 @    IN    SOA    ns.'"$zone"'.ward-scherens.sb.uclllabs.be. root.'"$zone"'.ward-scherens.sb.uclllabs.be.(
-           '"$serial"'    ; Serial
-            300        ; Refresh
-            300        ; Retry
-            300        ; Expire
+            23		; Serial
+            300 	; Refresh
+            300		; Retry
+            300		; Expire
             300)        ; Negative Cache TTl
 ;
 @    IN    NS    ns.'"$zone"'.ward-scherens.sb.uclllabs.be.
@@ -43,7 +41,7 @@ serialnumber=$(echo $seriall |sed 's/[^0-9]*//g')
 ((serialnumber++))
 newserial="$serialnumber    ; Serial"
 echo $newserial;
-sed -i "s/.Serial./\t\t\t    $newserial/g" /etc/bind/db.ward-scherens.sb.uclllabs.be
+sed -i "s/$seriall/\t\t\t    $newserial/g" /etc/bind/db.ward-scherens.sb.uclllabs.be
 echo -e 'serial updated'
 #restarting bind9
 echo 'Restart bind9 service'
