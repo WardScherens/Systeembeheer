@@ -14,16 +14,16 @@ fi
 echo "Adding zone"
 echo -e 'zone "'"$zone"'.ward-scherens.sb.uclllabs.be" {
     type master;
-    fileName "/etc/bind/zones/db.'"$zone"'.ward-scherens.sb.uclllabs.be";
+    file "/etc/bind/zones/db.'"$zone"'.ward-scherens.sb.uclllabs.be";
     notify yes;
 };
 ' >> /etc/bind/named.conf.local
 
 #Create db. fileName
 echo 'Creating :db.'"$zone"'.ward-scherens.sb.uclllabs.be' 
-echo -e "$TTL 604800
+echo -e '$TTL 604800
 @    IN    SOA    ns.'"$zone"'.ward-scherens.sb.uclllabs.be. root.'"$zone"'.ward-scherens.sb.uclllabs.be.(
-            $serial"1"    ; Serial
+           '"$serial"'    ; Serial
             300        ; Refresh
             300        ; Retry
             300        ; Expire
@@ -32,21 +32,20 @@ echo -e "$TTL 604800
 @    IN    NS    ns.'"$zone"'.ward-scherens.sb.uclllabs.be.
 @    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 ns    IN    A    193.191.177.203
-@    IN    A    193.191.177.203 " > /etc/bind/zones/db.'"$zone"'.ward-scherens.sb.uclllabs.be
+@    IN    A    193.191.177.203 ' > /etc/bind/zones/db.''"$zone"''.ward-scherens.sb.uclllabs.be
 
 #update db file
-echo -e '"$zone"    IN    NS    ns.ward-scherens.sb.uclllabs.be.' >> /etc/bind/db.ward-scherens.sb.uclllabs.be
+echo -e ''"$zone"'    IN    NS    ns.ward-scherens.sb.uclllabs.be.' >> /etc/bind/db.ward-scherens.sb.uclllabs.be
 
 #updating serial
-serialline=$(grep "Serial" /etc/bind/db.ward-scherens.sb.uclllabs.be)
-serialnumber=$(echo $serialline | cut -d ; -f 1)
+seriall=$(grep "Serial" /etc/bind/db.ward-scherens.sb.uclllabs.be)
+serialnumber=$(echo $seriall |sed 's/[^0-9]*//g')
 ((serialnumber++))
 newserial="$serialnumber    ; Serial"
 echo $newserial;
 sed -i "s/.Serial./\t\t\t    $newserial/g" /etc/bind/db.ward-scherens.sb.uclllabs.be
 echo -e 'serial updated'
-
+#restarting bind9
 echo 'Restart bind9 service'
 systemctl restart bind9
-
 echo "Ready"
