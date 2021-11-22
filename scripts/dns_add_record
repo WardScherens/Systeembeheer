@@ -1,53 +1,55 @@
 #!/bin/bash
-#if ran without permission: 
+#check permission
 
 if [ "$EUID" -ne 0 ]
   then echo "Run as root or with sudo";
   exit 1;
 fi
 
+DbFile=""
+
 if [ -n "$1" ]; then
-	if [[ $1 = "-t" ]]; then
-       		case $2 in
-			#Make A record
-			A )
-    				echo 'Creating '"$3"'record for ip'"$4"'with domain '"$5"''
-    				echo -e "$3          IN      A       $4" >> /etc/bind/zones/db."$5"
-        			DbFile="/etc/bind/zones/db.$5"
-        			;;
-			
-			#Make Cname record
-    			CNAME )
-				echo 'Creating '"$3"'record with domain '"$4"''
-        			DbFile="/etc/bind/zones/db.$4"
-        			echo -e ''"$3"'     IN      CNAME   '"$4"'.' >> "$DbFile"
-        			;;
-	
-      			MX )
-    				echo 'Creating '"$3"'record for ip'"$4"'with domain '"$5"''
-   	    			echo -e "@      IN      MX      10      $3.$5." >> /etc/bind/zones/db."$5"
-      				echo -e "$3     IN      A       $4" >> /etc/bind/zones/db."$5"
-       				DbFile="/etc/bind/zones/db.$5"
-       		 		;;
-			esac
+    if [[ $1 = "-t" ]]; then
+               case $2 in
+            #Make A record
+            A )
+                    echo 'Creating '"$3"'record for ip'"$4"'with domain '"$5"''
+                    echo -e "$3          IN      A       $4" >> /etc/bind/zones/db."$5"
+                    DbFile="/etc/bind/zones/db.$5"
+                    ;;
+
+            #Make Cname record
+                CNAME )
+                echo 'Creating '"$3"'record with domain '"$4"''
+                    DbFile="/etc/bind/zones/db.$4"
+                    echo -e ''"$3"'     IN      CNAME   '"$4"'.' >> "$DbFile"
+                    ;;
+
+                  MX )
+                    echo 'Creating '"$3"'record for ip'"$4"'with domain '"$5"''
+                       echo -e "@      IN      MX      10      $3.$5." >> /etc/bind/zones/db."$5"
+                      echo -e "$3     IN      A       $4" >> /etc/bind/zones/db."$5"
+                       DbFile="/etc/bind/zones/db.$5"
+                        ;;
+            esac
         else
-       		echo -e "$1     IN      A       $2" >> /etc/bind/zones/db."$3"
-     		DbFile="/etc/bind/zones/db.$3"
-       	fi
+               echo -e "$1     IN      A       $2" >> /etc/bind/zones/db."$3"
+             DbFile="/etc/bind/zones/db.$3"
+           fi
 
 #updating serial
-	seriall=$(grep "Serial" /etc/bind/db.ward-scherens.sb.uclllabs.be)
-	serialnumber=$(echo $seriall |sed 's/[^0-9]*//g')
-	((serialnumber++))
-	newserial="$serialnumber    ; Serial"
-	echo $newserial;
-	sed -i "s/.Serial./\t\t\t    $newserial/g" /etc/bind/db.ward-scherens.sb.uclllabs.be
-	echo -e 'serial updated'
+    seriall=$(grep "Serial" $DbFile)
+    serialnumber=$(echo $seriall |sed 's/[^0-9]*//g')
+    ((serialnumber++))
+    newserial="$serialnumber    ; Serial"
+    echo $newserial;
+    sed -i "s/$seriall/\t\t\t     $newserial/g" $DbFile
+    echo -e 'serial updated'
 
 #restarting bind9
-	echo 'Restart bind9 service'
-	systemctl restart bind9
-	echo "Ready"
+    echo 'Restart bind9 service'
+    systemctl restart bind9
+    echo "Ready"
 else
         echo -e "Invalid use"
 fi
