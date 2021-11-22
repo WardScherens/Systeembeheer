@@ -35,16 +35,19 @@ if [ -n "$1" ]; then
      		DbFile="/etc/bind/zones/db.$3"
        	fi
 
-    #Edit serialnumber
-        seriall=$(grep "Serial" /etc/bind/db.ward-scherens.sb.uclllabs.be)
-	serialnumber=$(echo $seriall | sed 's/[^0-9]*//g')
+#updating serial
+	seriall=$(grep "Serial" /etc/bind/db.ward-scherens.sb.uclllabs.be)
+	serialnumber=$(echo $seriall |sed 's/[^0-9]*//g')
 	((serialnumber++))
 	newserial="$serialnumber    ; Serial"
 	echo $newserial;
-	sed -i "s/.Serial./\t\t\t     $newserial/g" "$DbFile"
+	sed -i "s/.Serial./\t\t\t    $newserial/g" /etc/bind/db.ward-scherens.sb.uclllabs.be
 	echo -e 'serial updated'
-        systemctl restart bind9
-	echo -e 'Ready'
+
+#restarting bind9
+	echo 'Restart bind9 service'
+	systemctl restart bind9
+	echo "Ready"
 else
         echo -e "Invalid use"
 fi
