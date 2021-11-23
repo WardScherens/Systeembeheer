@@ -1,6 +1,6 @@
 $TTL 604800
 @    IN    SOA    ns.foobar.ward-scherens.sb.uclllabs.be. root.foobar.ward-scherens.sb.uclllabs.be.(
-           20211121    ; Serial
+           20211122    ; Serial
             300        ; Refresh
             300        ; Retry
             300        ; Expire
