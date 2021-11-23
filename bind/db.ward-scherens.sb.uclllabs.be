@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.ward-scherens.sb.uclllabs.be. root.ward-scherens.sb.uclllabs.be. (
-			    7		; Serial
+			    317    ; Serial
 			    300		; Refresh
 			    300		; Retry
 			    300		; Expire
@@ -21,6 +21,14 @@ test 				IN A 193.191.177.254
 www				IN A 193.191.177.203
 www1				IN A 193.191.177.203
 www2				IN A 193.191.177.203
+
+secure				IN A 193.191.177.203
+supersecure			IN A 193.191.177.203
+_acme-challenge.secure		IN TXT "IGfkWOKldRDgGSL_bHoXn9BiyRwauTxlwQftrBa-g0M"
+_acme-challenge.supersecure	IN TXT "U5lakw0RWEFzHv6tgDNRcinpOjD2aI5lnvuTF780GS8"
+_acme-challenge			IN TXT "Mhb6pr1Hk5P5cUB19fTsSppCDe55ZTYAP9DsOEKXz4Y"
+@       			IN CAA   0 issue "letsencrypt.org"
+@     				IN CAA   0 iodef "mailto:ward.scherens@student.ucll.be"
 
 foobar    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 foobar    IN    NS    ns.ward-scherens.sb.uclllabs.be.
@@ -52,3 +60,26 @@ subzoneana9ie    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneiba1so    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneoor5sh    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneeeg9vi    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonexahs9u    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneajohs9    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+foobar    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonegae9un    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+foobar2    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneeuquu8    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+foobar3    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+foobar4    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneiiw7za    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneiesh2a    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneahn3ie    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonethae5i    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneteino6    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneaiqu7d    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonecee2av    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneaeb5zi    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneonai8e    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneiwe9ie    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonenaiv8l    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonequoo2a    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonecah2oh    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneiequ2e    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonecoone1    IN    NS    ns.ward-scherens.sb.uclllabs.be.
