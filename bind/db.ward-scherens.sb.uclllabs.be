@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.ward-scherens.sb.uclllabs.be. root.ward-scherens.sb.uclllabs.be. (
-			    341    ; Serial
+			    342    ; Serial
 			    300		; Refresh
 			    300		; Retry
 			    300		; Expire
@@ -106,3 +106,4 @@ subzonezul1ie    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzonerail9i    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneta3eti    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneca3eew    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneaep5ho    IN    NS    ns.ward-scherens.sb.uclllabs.be.

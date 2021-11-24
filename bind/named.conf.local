@@ -461,3 +461,9 @@ zone "subzoneca3eew.ward-scherens.sb.uclllabs.be" {
     notify yes;
 };
 
+zone "subzoneaep5ho.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzoneaep5ho.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
