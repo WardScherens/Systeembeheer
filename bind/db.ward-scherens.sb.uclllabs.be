@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.ward-scherens.sb.uclllabs.be. root.ward-scherens.sb.uclllabs.be. (
-			    317    ; Serial
+			    341    ; Serial
 			    300		; Refresh
 			    300		; Retry
 			    300		; Expire
@@ -83,3 +83,26 @@ subzonequoo2a    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzonecah2oh    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneiequ2e    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzonecoone1    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneeez7ah    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+welke    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneahte4o    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonegee1ao    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneei3que    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonecob0lo    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneaeniu6    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneej2rae    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonemac5sh    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneohdi1h    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneieyee0    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneohth5u    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonejicai5    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneeoth5i    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneoowi0h    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneaac4vu    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneait7mo    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonehah5ka    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonebahng1    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonezul1ie    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonerail9i    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneta3eti    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneca3eew    IN    NS    ns.ward-scherens.sb.uclllabs.be.
