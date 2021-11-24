@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ns.ward-scherens.sb.uclllabs.be. root.ward-scherens.sb.uclllabs.be. (
-			    342    ; Serial
+			    351    ; Serial
 			    300		; Refresh
 			    300		; Retry
 			    300		; Expire
@@ -29,6 +29,9 @@ _acme-challenge.supersecure	IN TXT "U5lakw0RWEFzHv6tgDNRcinpOjD2aI5lnvuTF780GS8"
 _acme-challenge			IN TXT "Mhb6pr1Hk5P5cUB19fTsSppCDe55ZTYAP9DsOEKXz4Y"
 @       			IN CAA   0 issue "letsencrypt.org"
 @     				IN CAA   0 iodef "mailto:ward.scherens@student.ucll.be"
+
+@    IN    MX    10     mx.ward-scherens.sb.uclllabs.be.
+mx    IN    A    193.191.177.203
 
 foobar    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 foobar    IN    NS    ns.ward-scherens.sb.uclllabs.be.
@@ -107,3 +110,10 @@ subzonerail9i    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneta3eti    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneca3eew    IN    NS    ns.ward-scherens.sb.uclllabs.be.
 subzoneaep5ho    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonegoiph6    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneux8yah    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonefoora8    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonekaiv6l    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzoneizie2m    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonequei6b    IN    NS    ns.ward-scherens.sb.uclllabs.be.
+subzonesa7rah    IN    NS    ns.ward-scherens.sb.uclllabs.be.

@@ -467,3 +467,45 @@ zone "subzoneaep5ho.ward-scherens.sb.uclllabs.be" {
     notify yes;
 };
 
+zone "subzonegoiph6.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzonegoiph6.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
+zone "subzoneux8yah.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzoneux8yah.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
+zone "subzonefoora8.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzonefoora8.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
+zone "subzonekaiv6l.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzonekaiv6l.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
+zone "subzoneizie2m.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzoneizie2m.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
+zone "subzonequei6b.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzonequei6b.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
+zone "subzonesa7rah.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzonesa7rah.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
