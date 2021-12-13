@@ -3251,3 +3251,9 @@ zone "subzonewavei7.ward-scherens.sb.uclllabs.be" {
     notify yes;
 };
 
+zone "subzonezuim9w.ward-scherens.sb.uclllabs.be" {
+    type master;
+    file "/etc/bind/zones/db.subzonezuim9w.ward-scherens.sb.uclllabs.be";
+    notify yes;
+};
+
