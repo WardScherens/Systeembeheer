@@ -16,8 +16,8 @@ readme_directory = no
 compatibility_level = 2
 
 # TLS parameters
-smtpd_tls_cert_file=/etc/letsencrypt/live/ward-scherens.sb.uclllabs.com/fullchain.pem
-smtpd_tls_key_file=/etc/letsencrypt/live/ward-scherens.sb.ucllllabs.com/privkey.pem
+smtpd_tls_cert_file=/etc/letsencrypt/live/ward-scherens.sb.uclllabs.be/fullchain.pem
+smtpd_tls_key_file=/etc/letsencrypt/live/ward-scherens.sb.uclllabs.be/privkey.pem
 smtpd_use_tls=yes
 smtpd_tls_auth_only = yes
 smtp_tls_security_level = may
@@ -64,8 +64,9 @@ myhostname = ward-scherens.sb.uclllabs.be
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 mydomain = ward-scherens.sb.uclllabs.be
+myorigin = $mydomain
 #mss enkel localhost
-mydestination = $myhostname, localhost.$mydomain, localhost
+mydestination = localhost
 relayhost = 
 mynetworks = 127.0.0.0/8
 inet_interfaces = all
